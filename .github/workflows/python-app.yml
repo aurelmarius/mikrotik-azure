@@ -25,13 +25,11 @@ jobs:
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Run Script
-      env:
-        AZURE_SECRET: ${{ secrets.AZURE_SECRET }}
       run: python azure.py
     - name: commit files
       run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
+        git config --local user.email "aurelmarius@gmail.com"
+        git config --local user.name "aurelmarius"
         git add -A
         git diff-index --quiet HEAD || (git commit -a -m "updated logs" --allow-empty)
 
