@@ -26,7 +26,7 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Run Script
       env:
-        SOME_SECRET: ${{ secrets.SOME_SECRET }}
+        AZURE_SECRET: ${{ secrets.AZURE_SECRET }}
       run: python azure.py
     - name: commit files
       run: |
@@ -38,5 +38,5 @@ jobs:
     - name: push changes
       uses: ad-m/github-push-action@v0.6.0
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        github_token: ${{ secrets.AZURE_SECRET }}
         branch: main 
