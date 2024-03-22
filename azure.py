@@ -25,7 +25,7 @@ def generate_mikrotik_rsc(azure_ips_json, output_file):
 
 def main():
     azure_ips_url = "https://raw.githubusercontent.com/femueller/cloud-ip-ranges/master/microsoft-azure-ip-ranges.json"
-    output_file = "azure-ips2.rsc"
+    output_file = "azure-ips.rsc"
 
     azure_ips_json = download_azure_ips_json(azure_ips_url)
     if azure_ips_json:
